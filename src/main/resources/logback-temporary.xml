@@ -1,0 +1,34 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<configuration>-->
+
+    <!--<statusListener class="ch.qos.logback.core.status.NopStatusListener" />-->
+
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+        <!--<layout class="ch.qos.logback.classic.PatternLayout">-->
+            <!--<Pattern>-->
+                <!--%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n-->
+            <!--</Pattern>-->
+        <!--</layout>-->
+    <!--</appender>-->
+
+    <!--&lt;!&ndash;<root level="error">&ndash;&gt;-->
+        <!--&lt;!&ndash;<appender-ref ref="STDOUT"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</root>&ndash;&gt;-->
+
+    <!--<logger name="org.springframework" level="warn" additivity="false">-->
+        <!--<appender-ref ref="STDOUT" />-->
+    <!--</logger>-->
+
+    <!--<logger name="com.epam.martseniuk" level="debug" additivity="false">-->
+        <!--<appender-ref ref="STDOUT" />-->
+    <!--</logger>-->
+
+    <!--&lt;!&ndash;<logger name="ch.qos.logback" level="error" additivity="false">&ndash;&gt;-->
+        <!--&lt;!&ndash;<appender-ref ref="STDOUT" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</logger>&ndash;&gt;-->
+
+    <!--<root level="error">-->
+        <!--<appender-ref ref="STDOUT" />-->
+    <!--</root>-->
+
+<!--</configuration>-->
