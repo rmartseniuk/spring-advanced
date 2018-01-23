@@ -26,8 +26,9 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        String serialNumber = certificateUtils.getSerialNumber();
-        com.epam.martseniuk.entity.User user = userRepository.findUserByUsernameAndSerialNumber(username, serialNumber);
+//        String serialNumber = certificateUtils.getSerialNumber();
+//        com.epam.martseniuk.entity.User user = userRepository.findUserByUsernameAndSerialNumber(username, serialNumber);
+        com.epam.martseniuk.entity.User user = userRepository.findOne(username);
         if (Objects.isNull(user)) {
             throw new UsernameNotFoundException(username);
         }

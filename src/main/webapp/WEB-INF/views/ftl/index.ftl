@@ -85,9 +85,16 @@
         </tr>
     <#list model["books"] as book>
         <tr>
+            <td>${book.bookId}
             <td>${book.author.name}</td>
             <td>${book.title}</td>
             <td>${book.price}</td>
+            <td>
+                <form name="buyBook" action="buy" method="post">
+                    <input type="hidden" value=${book.bookId}/>
+                    <input type="submit" value="Buy"/>
+                </form>
+            </td>
         </tr>
     </#list>
     </table>

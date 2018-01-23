@@ -21,6 +21,8 @@ public class Book {
 
     private String price;
 
+    private Integer count;
+
 //    @ManyToMany(fetch = FetchType.EAGER)
 //    @JoinTable(name = "author_book",
 //            joinColumns = {@JoinColumn(name = "bookId")},

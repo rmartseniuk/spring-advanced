@@ -41,6 +41,7 @@ public class ApplicationRunner {
         anna_karenina = bookRepository.save(anna_karenina);
 
         User user = new User("test", "test", "5a57407d");
+        userRepository.save(user);
     }
 
 }
