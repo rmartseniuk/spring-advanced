@@ -5,10 +5,7 @@ import com.epam.martseniuk.service.business.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +28,10 @@ public class BookController {
     @RequestMapping(value = "/buy/{bookId}", method = RequestMethod.POST)
     public Book buyBook(@PathVariable Long bookId) {
         return bookService.buyBook(bookId);
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public Book addBook(@RequestBody Book book) {
+        return bookService.addBook(book);
     }
 }

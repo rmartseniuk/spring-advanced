@@ -30,10 +30,10 @@ public class ApplicationRunner {
         remark = authorRepository.save(remark);
         tolstoi = authorRepository.save(tolstoi);
 
-        Book western = new Book("On the Western front without changes", "121", remark);
-        Book three_friends = new Book("Three friends", "212", remark);
-        Book war_and_peace = new Book("War and Peace", "300", tolstoi);
-        Book anna_karenina = new Book("Anna Karenina", "250", tolstoi);
+        Book western = new Book("On the Western front without changes", "121", remark, 2);
+        Book three_friends = new Book("Three friends", "212", remark, 2);
+        Book war_and_peace = new Book("War and Peace", "300", tolstoi, 1);
+        Book anna_karenina = new Book("Anna Karenina", "250", tolstoi, 0);
 
         western = bookRepository.save(western);
         three_friends = bookRepository.save(three_friends);

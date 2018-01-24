@@ -1,15 +1,9 @@
 server:
   port: 8443
-  ssl:
-    enabled: true
-    key-store-type: PKCS12
-    key-store: classpath:localhost-key-store.p12
-    key-store-password: 1
-    key-alias: localhost
-    trust-store-type: PKCS12
-    trust-store: classpath:localhost-trust-store.p12
-    trust-store-password: 1
-    client-auth: need
+
+spring:
+  profiles:
+    active: dev
 
 logging:
   level:

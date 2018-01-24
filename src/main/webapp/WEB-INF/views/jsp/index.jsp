@@ -1,3 +1,6 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html>
 <style>
     body, input {
@@ -79,24 +82,26 @@
     <br/>
     <table class="datatable">
         <tr>
+            <th>Id</th>
             <th>Author</th>
             <th>Title</th>
+            <th>Count</th>
             <th>Price</th>
+            <th>Operation</th>
         </tr>
-    <#list model["books"] as book>
+    <c:forEach var="book" items="${books}">
         <tr>
             <td>${book.bookId}
             <td>${book.author.name}</td>
             <td>${book.title}</td>
+            <td>${book.count}</td>
             <td>${book.price}</td>
             <td>
-                <form name="buyBook" action="buy" method="post">
-                    <input type="hidden" value=${book.bookId}/>
-                    <input type="submit" value="Buy"/>
-                </form>
+                <spring:url value="/buy/${book.bookId}" var="buyUrl"/>
+                <button onclick="location.href = '${buyUrl}'">Buy</button>
             </td>
         </tr>
-    </#list>
+    </c:forEach>>
     </table>
 </div>
 </body>

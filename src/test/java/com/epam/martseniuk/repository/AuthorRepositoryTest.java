@@ -29,13 +29,13 @@ public class AuthorRepositoryTest {
         Author tolstoi = new Author("Lev Tolstoi");
 
 
-        Book western = new Book("On the Western front without changes", "121", remark);
+        Book western = new Book("On the Western front without changes", "121", remark, 2);
 //        western.setAuthors(Collections.singletonList(remark));
-        Book three_friends = new Book("Three friends", "212", remark);
+        Book three_friends = new Book("Three friends", "212", remark, 2);
 //        three_friends.setAuthors(Collections.singletonList(remark));
-        Book war_and_peace = new Book("War and Peace", "300", tolstoi);
+        Book war_and_peace = new Book("War and Peace", "300", tolstoi, 1);
 //        war_and_peace.setAuthors(Collections.singletonList(tolstoi));
-        Book anna_karenina = new Book("Anna Karenina", "250", tolstoi);
+        Book anna_karenina = new Book("Anna Karenina", "250", tolstoi, 0);
 //        anna_karenina.setAuthors(Collections.singletonList(tolstoi));
 
         western = bookRepository.save(western);

@@ -32,10 +32,11 @@ public class Book {
     @ManyToOne(fetch = FetchType.EAGER)
     private Author author;
 
-    public Book(String title, String price, Author author) {
+    public Book(String title, String price, Author author, Integer count) {
         this.title = title;
         this.price = price;
         this.author = author;
+        this.count = count;
     }
 
     //    public void addAuthor(Author a) {
