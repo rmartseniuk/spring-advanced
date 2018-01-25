@@ -1,5 +1,6 @@
 package com.epam.martseniuk.service.business;
 
+import com.epam.martseniuk.aspect.Loggable;
 import com.epam.martseniuk.entity.Book;
 import com.epam.martseniuk.repository.AuthorRepository;
 import com.epam.martseniuk.repository.BookRepository;
@@ -21,10 +22,11 @@ public class BookService {
         return (List<Book>) bookRepository.findAll();
     }
 
-    @Transactional
+//    @Transactional
+    @Loggable
     public Book buyBook(Long bookId) {
         Book book = bookRepository.findOne(bookId);
-        if (Objects.isNull(book) && book.getCount() != 0) {
+        if (Objects.isNull(book) || book.getCount() == 0) {
             throw new RuntimeException();
         }
         book.setCount(book.getCount() - 1);

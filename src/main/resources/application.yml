@@ -4,6 +4,10 @@ server:
 spring:
   profiles:
     active: dev
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/views/jsp/
+#      suffix: .jsp
 
 logging:
   level:

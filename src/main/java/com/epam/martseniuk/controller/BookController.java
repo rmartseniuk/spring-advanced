@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
 
@@ -26,8 +27,9 @@ public class BookController {
     }
 
     @RequestMapping(value = "/buy/{bookId}", method = RequestMethod.POST)
-    public Book buyBook(@PathVariable Long bookId) {
-        return bookService.buyBook(bookId);
+    public RedirectView buyBook(@PathVariable Long bookId) {
+        bookService.buyBook(bookId);
+        return new RedirectView("/books");
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
