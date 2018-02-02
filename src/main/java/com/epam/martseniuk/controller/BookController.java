@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -27,7 +28,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "/buy/{bookId}", method = RequestMethod.POST)
-    public RedirectView buyBook(@PathVariable Long bookId) {
+    public RedirectView buyBook(@PathVariable Long bookId) throws IOException {
         bookService.buyBook(bookId);
         return new RedirectView("/books");
     }

@@ -6,16 +6,16 @@ import com.epam.martseniuk.service.business.BookService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
+//@Configuration
 public class ServiceConfig {
 
-    @Bean
-    public BookService bookService(BookRepository bookRepository,
-                                   AuthorRepository authorRepository) {
-        BookService bookService = new BookService();
-        bookService.setBookRepository(bookRepository);
+//    @Bean
+//    public BookService bookService(BookRepository bookRepository,
+//                                   AuthorRepository authorRepository) {
+//        BookService bookService = new BookService();
+//        bookService.setBookRepository(bookRepository);
 //        bookService.setAuthorRepository();
-        return bookService;
-    }
+//        return bookService;
+//    }
 
 }

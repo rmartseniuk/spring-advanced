@@ -4,10 +4,14 @@ server:
 spring:
   profiles:
     active: dev
+
 #  mvc:
 #    view:
 #      prefix: /WEB-INF/views/jsp/
 #      suffix: .jsp
+
+audit:
+  path: src/main/resources/audit.txt
 
 logging:
   level:
