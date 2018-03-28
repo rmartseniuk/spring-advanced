@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 @Slf4j
 @Aspect
 @Component
-//@Order(Ordered.HIGHEST_PRECEDENCE)
+@Order
 public class AuditAspect {
 
     @Value("${audit.path}")
@@ -38,15 +38,14 @@ public class AuditAspect {
         return method.getName();
     }
 
-    private void save(String auditInfo) throws IOException {
-        throw new IOException();
-//        try (BufferedWriter in = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path, true)))) {
-//            in.write(auditInfo);
-//            in.newLine();
-//        } catch (IOException e) {
-//            log.error("Cannot write audit info to file", e);
-//            System.out.println(e);
-//        }
+    private void save(String auditInfo) {
+        try (BufferedWriter in = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path, true)))) {
+            in.write(auditInfo);
+            in.newLine();
+            in.flush();
+        } catch (IOException e) {
+            log.error("Cannot write audit info to file", e);
+        }
     }
 }
 

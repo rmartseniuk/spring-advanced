@@ -23,8 +23,8 @@ spring:
         web-allow-others: true
         trace: true
 
-security:
-  ignored: /**
-  basic:
-    enabled: false
+#security:
+#  ignored: /**
+#  basic:
+#    enabled: false
 

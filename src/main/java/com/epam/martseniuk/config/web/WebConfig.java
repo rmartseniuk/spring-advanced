@@ -3,10 +3,9 @@ package com.epam.martseniuk.config.web;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
@@ -23,6 +22,11 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 //        viewResolver.setSuffix(".jsp");
 //        return viewResolver;
 //    }
+
+    @Bean
+    public RequestContextListener requestContextListener(){
+        return new RequestContextListener();
+    }
 
     @Bean
     public FreeMarkerViewResolver freeMarkerViewResolver() {

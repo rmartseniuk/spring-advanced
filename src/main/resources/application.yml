@@ -3,12 +3,7 @@ server:
 
 spring:
   profiles:
-    active: dev
-
-#  mvc:
-#    view:
-#      prefix: /WEB-INF/views/jsp/
-#      suffix: .jsp
+    active: dev, ssl
 
 audit:
   path: src/main/resources/audit.txt
